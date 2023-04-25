@@ -1,4 +1,4 @@
-# EXP-02-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON
+# EXP-01-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON
 
 AIM:  To interface a digital input (push button) and blink and LED upon activation.
 COMPONENTS REQUIRED:
@@ -30,11 +30,13 @@ PIN DIAGRAM FOR ATMEGA 328
 ![image](https://user-images.githubusercontent.com/36288975/163530394-115baee4-7ed1-49fe-9cce-d7b625e11e85.png)
 
 FIGURE-01
+
 ![image](https://user-images.githubusercontent.com/36288975/163530431-4d390e98-0942-42d8-95b8-f57d348e6ad8.png)
 
 
 
 FIGURE-02
+
 PROCEDURE 
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
@@ -67,7 +69,30 @@ FIGURE -03
 
 
 PROGRAM 
- 
+ ```
+ int buttonstate = 0;
+
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  buttonstate = digitalRead(2);
+  if(buttonstate == HIGH)
+  {
+    digitalWrite(13, HIGH);
+  }
+  else
+  {
+    digitalWrite(13, LOW);
+  }
+  delay(100);
+  
+}
+```
  
  
  
@@ -76,6 +101,8 @@ PROGRAM
 
 
 Output of the simulation :
+![rob](https://user-images.githubusercontent.com/119393556/234331383-82b4cb0c-de66-483d-ad8a-e449d6576f58.png)
 
-[My image](username.github.com/repository/img/image.jpg)
+![rob1](https://user-images.githubusercontent.com/119393556/234331470-cb45a0d3-3565-4dc9-b12e-7970427c37cd.png)
+
 
